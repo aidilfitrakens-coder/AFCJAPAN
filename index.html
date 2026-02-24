@@ -633,7 +633,276 @@
           transform: scale(1.2);
         }
       }
+      /* ── AFC ── */
+      /* ── Card AFC Company ── */
+      .card-afc {
+        margin-top: 10px;
+        background: var(--card);
+        border: 1.5px solid var(--border); /* sama dengan card-stem */
+        border-radius: 32px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr; /* sama dengan card-stem */
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+        box-shadow: 0 8px 30px rgba(137, 19, 146, 0.07); /* sama dengan card-stem */
+      }
 
+      .card-afc:hover {
+        border-color: rgba(137, 19, 146, 0.35); /* sama dengan card-stem */
+        box-shadow: 0 20px 50px rgba(137, 19, 146, 0.13); /* sama dengan card-stem */
+      }
+
+      /* ── Gambar (kiri) ── */
+      .card-afc-img {
+        background: linear-gradient(
+          145deg,
+          #f0e5ff,
+          #e8d8ff
+        ); /* sama persis card-stem-img */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 480px; /* sama dengan card-stem */
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-afc-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s; /* sama dengan card-stem */
+      }
+
+      .card-afc:hover .card-afc-img img {
+        transform: scale(1.03); /* sama dengan card-stem */
+      }
+
+      /* ── Pill label di atas gambar (ganti afc-img-pill) ── */
+      .afc-img-pill {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        z-index: 2;
+        background: var(--gold);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 50px;
+      }
+
+      /* ── Badge bawah gambar — ikut .stem-img-label ── */
+      .afc-img-badge {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 2;
+        background: rgba(137, 19, 146, 0.85); /* diubah dari biru → ungu */
+        backdrop-filter: blur(8px);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .afc-img-badge i {
+        color: var(--gold);
+      }
+
+      /* ── Body (kanan) — ikut .card-stem-body ── */
+      .card-afc-body {
+        padding: 48px 36px; /* sama dengan card-stem-body */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 18px;
+      }
+
+      /* ── Eyebrow pill — ikut .prod-eyebrow.stem ── */
+      .afc-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 50px;
+        background: rgba(137, 19, 146, 0.08); /* diubah dari biru → ungu */
+        color: var(--p);
+        border: 1px solid rgba(137, 19, 146, 0.2);
+        width: fit-content;
+        margin-bottom: 16px;
+      }
+
+      /* ── Title — ikut .prod-title ── */
+      .afc-title {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        color: var(--text);
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+
+      .afc-title span {
+        color: var(--gold); /* tetap gold, tidak berubah */
+      }
+
+      /* ── Deskripsi — ikut .prod-subtitle ── */
+      .afc-desc {
+        font-size: 0.88rem;
+        color: var(--text3);
+        line-height: 1.75;
+        margin-bottom: 22px;
+      }
+
+      /* ── Stats grid ── */
+      .afc-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+
+      .afc-stat {
+        background: rgba(137, 19, 146, 0.05); /* diubah dari biru → ungu */
+        border: 1px solid rgba(137, 19, 146, 0.1);
+        border-radius: 16px;
+        padding: 14px 10px;
+        text-align: center;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .afc-stat:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 18px rgba(137, 19, 146, 0.1); /* diubah dari biru → ungu */
+      }
+
+      .afc-stat-num {
+        font-family: "Syne", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--p); /* diubah dari var(--s) → var(--p) */
+      }
+
+      .afc-stat-num sup {
+        font-size: 0.7rem;
+        color: var(--gold);
+      }
+
+      .afc-stat-lbl {
+        font-size: 0.68rem;
+        color: var(--text3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 2px;
+        font-weight: 500;
+      }
+
+      /* ── Office label ── */
+      .afc-offices-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text2);
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .afc-offices-label i {
+        color: var(--gold);
+      }
+
+      /* ── Office chips — ikut .ind-chip ── */
+      .afc-offices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .afc-office-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(137, 19, 146, 0.06); /* diubah dari biru → ungu */
+        border: 1px solid rgba(137, 19, 146, 0.15);
+        color: var(--p);
+        padding: 5px 13px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .afc-office-chip i {
+        font-size: 0.55rem;
+        opacity: 0.6;
+      }
+
+      /* HQ chip tetap gold */
+      .afc-office-chip.hq {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 146, 42, 0.1),
+          rgba(212, 146, 42, 0.05)
+        );
+        border: 1px solid rgba(212, 146, 42, 0.3);
+        color: var(--gold);
+      }
+
+      /* ── CSR banner — ikut warna var(--p) ── */
+      .afc-csr {
+        background: linear-gradient(
+          135deg,
+          var(--p) 0%,
+          #5c0f63 100%
+        ); /* diubah dari --s biru → --p ungu */
+        border-radius: 16px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: #fff;
+      }
+
+      .afc-csr-icon {
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      .afc-csr-head {
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+
+      .afc-csr-sub {
+        font-size: 0.72rem;
+        opacity: 0.72;
+        margin-top: 2px;
+      }
       /* ── PROMO STRIP ── */
       .promo-strip {
         background: linear-gradient(135deg, var(--p), var(--s));
@@ -1414,6 +1683,15 @@
 
       /* ── MOBILE ── */
       @media (max-width: 900px) {
+        .card-afc {
+          grid-template-columns: 1fr;
+        }
+        .card-afc-img {
+          min-height: 280px;
+        }
+        .afc-stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
         .hero {
           grid-template-columns: 1fr;
           gap: 40px;
@@ -1481,6 +1759,30 @@
         }
       }
       @media (max-width: 600px) {
+        .card-afc-body {
+          padding: 24px 18px;
+          gap: 12px;
+        }
+        .afc-stats {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+        }
+        .afc-stat {
+          padding: 10px 6px;
+        }
+        .afc-stat-num {
+          font-size: 1.2rem;
+        }
+        .afc-stat-lbl {
+          font-size: 0.62rem;
+        }
+        .afc-title {
+          font-size: 1.5rem;
+        }
+        .afc-csr {
+          padding: 12px 14px;
+          gap: 10px;
+        }
         .card-stem-body,
         .card-nk-body {
           padding: 24px 18px;
@@ -1500,6 +1802,20 @@
         }
       }
       @media (max-width: 400px) {
+        .afc-stats {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 6px;
+        }
+        .afc-stat-num {
+          font-size: 1rem;
+        }
+        .afc-offices {
+          gap: 6px;
+        }
+        .afc-office-chip {
+          font-size: 0.68rem;
+          padding: 4px 10px;
+        }
         .pathway-diagram {
           grid-template-columns: 1fr 26px 1fr;
           grid-template-rows: auto 30px auto;
@@ -1632,9 +1948,14 @@
         <div class="hero-visual">
           <div class="hero-img-wrap">
             <div class="hero-img-placeholder">
-            <img src="DATA.png" alt="AFC Research Facility"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-        />
+              <img
+                src="DATA.png"
+                alt="AFC Research Facility"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
               <p>Fasilitas Riset AFC Japan · Shizuoka</p>
             </div>
           </div>
@@ -1645,6 +1966,276 @@
       </div>
     </header>
 
+    <!--  -->
+
+    <!-- KOMPLIKASI & EDUKASI PENYAKIT -->
+    <section class="komplikasi-section" id="komplikasi">
+      <div class="container">
+        <div class="card-afc">
+          <!-- KIRI: Gambar -->
+          <div class="card-afc-img">
+            <span class="afc-img-pill">Since 1969</span>
+
+            <!-- Ganti src dengan path gambar asli, misal: src="13.jpeg" -->
+            <img
+              src="13.jpeg"
+              alt="AFC Japan Office &amp; CSR"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <!-- Fallback placeholder jika gambar tidak ada -->
+            <div
+              style="
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                opacity: 0.45;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+              "
+            >
+              <i
+                class="fas fa-building"
+                style="font-size: 3.5rem; color: var(--p)"
+              ></i>
+              <span style="font-size: 0.8rem; color: var(--text3)"
+                >AFC Japan Office</span
+              >
+            </div>
+
+            <div class="afc-img-badge">
+              <i class="fas fa-chart-line"></i>
+              Tokyo Stock Exchange Listed
+            </div>
+          </div>
+
+          <!-- KANAN: Info -->
+          <div class="card-afc-body">
+            <!-- Eyebrow -->
+            <div class="afc-eyebrow">
+              <i class="fas fa-globe-asia"></i> Perusahaan Farmasi Jepang
+            </div>
+
+            <!-- Title -->
+            <h2 class="afc-title">
+              AFC <span>Japan</span><br />Pharmaceutical Co.
+            </h2>
+
+            <!-- Deskripsi -->
+            <p class="afc-desc">
+              Salah satu perusahaan farmasi
+              <strong>tertua &amp; terbesar</strong>
+              di Jepang — terdaftar Bursa Saham Tokyo sejak 1969. Hadir di
+              Indonesia mulai 2018, membawa teknologi
+              <strong>NK-Cell Therapy &amp; StemCell</strong> kelas dunia.
+            </p>
+
+            <!-- Stats -->
+            <div class="afc-stats">
+              <div class="afc-stat">
+                <div class="afc-stat-num">55<sup>+</sup></div>
+                <div class="afc-stat-lbl">Tahun Berdiri</div>
+              </div>
+              <div class="afc-stat">
+                <div class="afc-stat-num">8</div>
+                <div class="afc-stat-lbl">Patent Aktif</div>
+              </div>
+              <div class="afc-stat">
+                <div class="afc-stat-num">5</div>
+                <div class="afc-stat-lbl">Kota di RI</div>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="afc-divider"></div>
+
+            <!-- Offices -->
+            <div class="afc-offices-label">
+              <i class="fas fa-map-marker-alt"></i> Kantor di Indonesia
+            </div>
+            <div class="afc-offices">
+              <span class="afc-office-chip"
+                ><i class="fas fa-circle"></i> Jakarta</span
+              >
+              <span class="afc-office-chip"
+                ><i class="fas fa-circle"></i> Surabaya</span
+              >
+              <span class="afc-office-chip"
+                ><i class="fas fa-circle"></i> Medan</span
+              >
+              <span class="afc-office-chip"
+                ><i class="fas fa-circle"></i> Bali</span
+              >
+              <span class="afc-office-chip hq"
+                ><i class="fas fa-flag"></i> Shizuoka HQ</span
+              >
+            </div>
+
+            <!-- CSR -->
+            <div class="afc-csr">
+              <div class="afc-csr-icon">
+                <i class="fas fa-hand-holding-water"></i>
+              </div>
+              <div>
+                <div class="afc-csr-head">🌊 AFC Care — 10 Sumber Air NTT</div>
+                <div class="afc-csr-sub">
+                  Diresmikan Bpk. Ernest Prayuda · Diwakili Bpk. Nicolas
+                  Rampisela
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Top Question -->
+        <div class="top-question">
+          <i class="fas fa-triangle-exclamation"></i>
+          <span>Apakah Anda atau Keluarga Anda Sakit?</span>
+        </div>
+
+        <!-- Pathway Diagram -->
+        <div class="pathway-box">
+          <h4 style="text-align: center; margin-bottom: 28px">
+            <i class="fas fa-project-diagram"></i> &nbsp;Rantai Penyakit
+            Komplikasi
+          </h4>
+
+          <div class="pathway-diagram">
+            <!-- Row 1: DIABETES ↔ JANTUNG -->
+            <div class="pway-box">DIABETES</div>
+            <div class="pway-arrow-h">
+              <i class="fas fa-arrows-left-right"></i>
+            </div>
+            <div class="pway-box">JANTUNG</div>
+
+            <!-- Row 2: vertical arrows -->
+            <div class="pway-arrow-v-left">
+              <i class="fas fa-arrows-up-down"></i>
+            </div>
+            <div class="pway-center-spacer"></div>
+            <div class="pway-arrow-v-right">
+              <i class="fas fa-arrows-up-down"></i>
+            </div>
+
+            <!-- Row 3: PENCERNAAN ↔ GINJAL -->
+            <div class="pway-box">PENCERNAAN</div>
+            <div class="pway-arrow-h">
+              <i class="fas fa-arrows-left-right"></i>
+            </div>
+            <div class="pway-box">GINJAL</div>
+          </div>
+
+          <div class="pathway-warning">
+            <strong
+              ><i class="fas fa-exclamation-triangle"></i>&nbsp; HATI-HATI:
+              Keempat organ ini saling mempengaruhi dan bisa memicu komplikasi
+              berantai!</strong
+            >
+          </div>
+        </div>
+
+        <!-- Warning Banner (now below diagram) -->
+        <div class="warning-banner">
+          <div class="warn-badge">
+            <i class="fas fa-radiation"></i> WASPADA KOMPLIKASI
+          </div>
+          <div class="warn-divider">HATI-HATI TERJADI</div>
+          <div class="warn-divider warn-penyakit">PENYAKIT</div>
+          <h2>Organ yang <em>Terdampak</em><br />& Komplikasi</h2>
+          <div class="warn-glow-line"></div>
+        </div>
+
+        <!-- Disease Cards -->
+        <div class="disease-grid">
+          <!-- PENCERNAAN -->
+          <div class="disease-card digestion-card">
+            <div class="dc-icon digestion">
+              <i class="fas fa-bacterium"></i>
+            </div>
+            <h3>PENCERNAAN</h3>
+            <div class="dc-sub">Sumber Awal Penyakit</div>
+            <p>
+              Umumnya penyakit bermula dari pencernaan yang kotor. Endapan
+              sisa-sisa makanan (residu) akan memunculkan gas-gas dan akan
+              menaikkan asam lambung.
+            </p>
+            <ul>
+              <li>Sisa Karbohidrat → bisa <strong>DIABETES</strong></li>
+              <li>Sisa Lemak → bisa <strong>KOLESTEROL</strong></li>
+              <li>Sisa Mineral → bisa <strong>ASAM URAT</strong></li>
+              <li>Sisa Fast Food → bisa <strong>KANKER</strong></li>
+            </ul>
+          </div>
+
+          <!-- DIABETES -->
+          <div class="disease-card diabetes-card">
+            <div class="dc-icon diabetes"><i class="fas fa-syringe"></i></div>
+            <h3>DIABETES</h3>
+            <div class="dc-sub">
+              <i class="fas fa-skull" style="color: #c93030"></i>&nbsp; "The
+              Silent Killer"
+            </div>
+            <p>
+              Adalah gula darah yang tidak diurai oleh insulin pankreas. Sisa
+              gula dalam darah akan bisa mengendap di bagian tubuh manapun.
+            </p>
+            <ul>
+              <li>Bisa berakibat ke <strong>Jantung</strong></li>
+              <li>Bisa berakibat ke <strong>Stroke</strong></li>
+              <li>Bisa berakibat ke <strong>Mata</strong></li>
+              <li>Bisa berakibat ke <strong>Tulang</strong></li>
+              <li>Bisa berakibat ke <strong>Impotensi</strong></li>
+              <li>
+                Karena diabet tanpa disadari bisa merusak organ apapun → disebut
+                <strong>SILENT KILLER</strong>
+              </li>
+            </ul>
+          </div>
+
+          <!-- JANTUNG -->
+          <div class="disease-card heart-card">
+            <div class="dc-icon heart"><i class="fas fa-heart-pulse"></i></div>
+            <h3>JANTUNG & PEMBULUH</h3>
+            <div class="dc-sub">Hipertensi & Sirkulasi</div>
+            <p>
+              Radikal bebas serta sisa hasil pencernaan seperti gula, lemak, dan
+              mineral yang larut dalam darah dapat mengendap dan menempel pada
+              dinding pembuluh darah, menyebabkan penyempitan atau penyumbatan
+              aliran darah, termasuk ke otak.
+            </p>
+            <ul>
+              <li>Pembengkakan jantung</li>
+              <li>Penyakit jantung koroner</li>
+              <li>Irama jantung tidak normal (aritmia)</li>
+              <li>Melemahnya denyut jantung</li>
+            </ul>
+          </div>
+
+          <!-- GINJAL -->
+          <div class="disease-card kidney-card">
+            <div class="dc-icon kidney"><i class="fas fa-droplet"></i></div>
+            <h3>GINJAL & CUCI DARAH</h3>
+            <div class="dc-sub">Hemodialisis</div>
+            <p>
+              Ginjal berfungsi membuang zat sisa (residu) dari tubuh, sehingga
+              darah bersih kembali. Apabila ginjal terganggu, kotoran dalam
+              darah tidak dapat dibuang dengan baik, menyebabkan penumpukan
+              racun yang bisa berujung cuci darah (hemodialisis).
+            </p>
+            <ul>
+              <li>Hipertensi — ginjal bekerja lebih keras</li>
+              <li>Diabetes — gula darah tinggi merusak ginjal</li>
+              <li>
+                Endapan mineral dan batu ginjal yang menghambat penyaringan
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- PRODUCTS -->
     <section class="section" id="products">
       <div class="container">
@@ -1658,6 +2249,7 @@
             regenerasi & perlindungan sel maksimal.
           </p>
         </div>
+
         <div class="products-grid">
           <!-- STEMCELL CARD BESAR -->
           <div class="card-stem">
@@ -1927,156 +2519,6 @@
                 ><i class="fas fa-check"></i>Anti Penuaan</span
               >
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KOMPLIKASI & EDUKASI PENYAKIT -->
-    <section class="komplikasi-section" id="komplikasi">
-      <div class="container">
-        <!-- Top Question -->
-        <div class="top-question">
-          <i class="fas fa-triangle-exclamation"></i>
-          <span>Apakah Anda atau Keluarga Anda Sakit?</span>
-        </div>
-
-        <!-- Pathway Diagram -->
-        <div class="pathway-box">
-          <h4 style="text-align: center; margin-bottom: 28px">
-            <i class="fas fa-project-diagram"></i> &nbsp;Rantai Penyakit
-            Komplikasi
-          </h4>
-
-          <div class="pathway-diagram">
-            <!-- Row 1: DIABETES ↔ JANTUNG -->
-            <div class="pway-box">DIABETES</div>
-            <div class="pway-arrow-h">
-              <i class="fas fa-arrows-left-right"></i>
-            </div>
-            <div class="pway-box">JANTUNG</div>
-
-            <!-- Row 2: vertical arrows -->
-            <div class="pway-arrow-v-left">
-              <i class="fas fa-arrows-up-down"></i>
-            </div>
-            <div class="pway-center-spacer"></div>
-            <div class="pway-arrow-v-right">
-              <i class="fas fa-arrows-up-down"></i>
-            </div>
-
-            <!-- Row 3: PENCERNAAN ↔ GINJAL -->
-            <div class="pway-box">PENCERNAAN</div>
-            <div class="pway-arrow-h">
-              <i class="fas fa-arrows-left-right"></i>
-            </div>
-            <div class="pway-box">GINJAL</div>
-          </div>
-
-          <div class="pathway-warning">
-            <strong
-              ><i class="fas fa-exclamation-triangle"></i>&nbsp; HATI-HATI:
-              Keempat organ ini saling mempengaruhi dan bisa memicu komplikasi
-              berantai!</strong
-            >
-          </div>
-        </div>
-
-        <!-- Warning Banner (now below diagram) -->
-        <div class="warning-banner">
-          <div class="warn-badge">
-            <i class="fas fa-radiation"></i> WASPADA KOMPLIKASI
-          </div>
-          <div class="warn-divider">HATI-HATI TERJADI</div>
-          <div class="warn-divider warn-penyakit">PENYAKIT</div>
-          <h2>Organ yang <em>Terdampak</em><br />& Komplikasi</h2>
-          <div class="warn-glow-line"></div>
-        </div>
-
-        <!-- Disease Cards -->
-        <div class="disease-grid">
-          <!-- PENCERNAAN -->
-          <div class="disease-card digestion-card">
-            <div class="dc-icon digestion">
-              <i class="fas fa-bacterium"></i>
-            </div>
-            <h3>PENCERNAAN</h3>
-            <div class="dc-sub">Sumber Awal Penyakit</div>
-            <p>
-              Umumnya penyakit bermula dari pencernaan yang kotor. Endapan
-              sisa-sisa makanan (residu) akan memunculkan gas-gas dan akan
-              menaikkan asam lambung.
-            </p>
-            <ul>
-              <li>Sisa Karbohidrat → bisa <strong>DIABETES</strong></li>
-              <li>Sisa Lemak → bisa <strong>KOLESTEROL</strong></li>
-              <li>Sisa Mineral → bisa <strong>ASAM URAT</strong></li>
-              <li>Sisa Fast Food → bisa <strong>KANKER</strong></li>
-            </ul>
-          </div>
-
-          <!-- DIABETES -->
-          <div class="disease-card diabetes-card">
-            <div class="dc-icon diabetes"><i class="fas fa-syringe"></i></div>
-            <h3>DIABETES</h3>
-            <div class="dc-sub">
-              <i class="fas fa-skull" style="color: #c93030"></i>&nbsp; "The
-              Silent Killer"
-            </div>
-            <p>
-              Adalah gula darah yang tidak diurai oleh insulin pankreas. Sisa
-              gula dalam darah akan bisa mengendap di bagian tubuh manapun.
-            </p>
-            <ul>
-              <li>Bisa berakibat ke <strong>Jantung</strong></li>
-              <li>Bisa berakibat ke <strong>Stroke</strong></li>
-              <li>Bisa berakibat ke <strong>Mata</strong></li>
-              <li>Bisa berakibat ke <strong>Tulang</strong></li>
-              <li>Bisa berakibat ke <strong>Impotensi</strong></li>
-              <li>
-                Karena diabet tanpa disadari bisa merusak organ apapun → disebut
-                <strong>SILENT KILLER</strong>
-              </li>
-            </ul>
-          </div>
-
-          <!-- JANTUNG -->
-          <div class="disease-card heart-card">
-            <div class="dc-icon heart"><i class="fas fa-heart-pulse"></i></div>
-            <h3>JANTUNG & PEMBULUH</h3>
-            <div class="dc-sub">Hipertensi & Sirkulasi</div>
-            <p>
-              Radikal bebas serta sisa hasil pencernaan seperti gula, lemak, dan
-              mineral yang larut dalam darah dapat mengendap dan menempel pada
-              dinding pembuluh darah, menyebabkan penyempitan atau penyumbatan
-              aliran darah, termasuk ke otak.
-            </p>
-            <ul>
-              <li>Pembengkakan jantung</li>
-              <li>Penyakit jantung koroner</li>
-              <li>Irama jantung tidak normal (aritmia)</li>
-              <li>Melemahnya denyut jantung</li>
-            </ul>
-          </div>
-
-          <!-- GINJAL -->
-          <div class="disease-card kidney-card">
-            <div class="dc-icon kidney"><i class="fas fa-droplet"></i></div>
-            <h3>GINJAL & CUCI DARAH</h3>
-            <div class="dc-sub">Hemodialisis</div>
-            <p>
-              Ginjal berfungsi membuang zat sisa (residu) dari tubuh, sehingga
-              darah bersih kembali. Apabila ginjal terganggu, kotoran dalam
-              darah tidak dapat dibuang dengan baik, menyebabkan penumpukan
-              racun yang bisa berujung cuci darah (hemodialisis).
-            </p>
-            <ul>
-              <li>Hipertensi — ginjal bekerja lebih keras</li>
-              <li>Diabetes — gula darah tinggi merusak ginjal</li>
-              <li>
-                Endapan mineral dan batu ginjal yang menghambat penyaringan
-              </li>
-            </ul>
           </div>
         </div>
       </div>
